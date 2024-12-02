@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" media="screen">
+  <title>MYSTERY</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d3d3d3; 
+      overflow-x: hidden;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      color: rgb(167, 167, 167);
+      border-bottom: 2px solid #ccc;
+    }
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #ffffff;
+    }
+    header .menu {
+      font-size: 1.2rem;
+      cursor: pointer;
+      background-color: #ffffff;
+    }
+    .parallax-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 50%;
+  }
+  
+  .parallax-bg {
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    width:60%; 
+    height: 100%; 
+    background: url("C:\Users\Sulpak\Desktop\qwe.png") no-repeat center center / cover;
+    transform: translateY(-100%);
+    z-index: -1;
+    animation: bounceIn 1.5s ease-out forwards;
+  }
+  
+  .parallax-bg1 {
+    position: absolute;
+    top: 75%;
+    left: 33%;
+    width: 35%; 
+    height: 20%; 
+    background: url("C:\Users\Sulpak\Desktop\qwe.png") no-repeat center center / cover;
+    transform: translateY(-100%);
+    z-index: -1;
+    animation: bounceIn 1.5s ease-out forwards;
+  }
+  
+  .parallax-bg2 {
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    width: 35%; 
+    height: 20%; 
+    background: url("C:\Users\Sulpak\Desktop\qwe.png") no-repeat center center / cover;
+    transform: translateY(-100%);
+    z-index: -1;
+    animation: bounceIn 1.5s ease-out forwards;
+  }
+  
+  .content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(105, 105, 105, 0.233);
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+  }
+  
+  .parallax-wrapper:hover .parallax-bg {
+    transform: translateY(-10%);
+    transition: transform 0.5s ease;
+  }
+  
+  
+  @keyframes bounceIn {
+    20% {
+      transform: scale(0) translateY(-50%);
+    }
+    10% {
+      transform: scale(0) translateY(-30%);
+    }
+    0% {
+      transform: scale(0) translateY(-10%);
+    }
+    100% {
+      transform: scale(100%) translateY(-55%);
+    }
+  }
+  
+  
+  
+    .animated {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .image-text-block {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .image-text-block img {
+      width: 400%;
+      height: 300%;
+      display: block;
+      margin: 0 auto;
+    }
+    .image-text-block p {
+      font-size:1.2rem;;
+      margin-top: 15px;
+    }
+    .text-bottom {
+      text-align: center;
+      margin: 50px 0;
+      font-size:1.2rem;
+    }
+    .text-top {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 1.2rem;
+    }
+    .colored-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 50px 0;
+    }
+    .colored-boxes .box {
+      width: 30%;
+      height: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white; 
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.2s;
+    }
+    .colored-boxes .red {
+      background-color: rgb(255, 255, 255);
+      order: 1; 
+      animation-delay: 0.4s;
+      color: black;
+    }
+    .colored-boxes .green {
+      background-color: rgb(0, 187, 255);
+      order: 2;
+      animation-delay: 0.6s;
+      color: rgb(255, 255, 255);
+    }
+    .colored-boxes .blue {
+      background-color: rgb(255, 77, 0);
+      order: 3; 
+      animation-delay: 0.8s;
+      color: rgb(255, 255, 255);
+      
+    }
+    .colored-boxes .yellow {
+      background-color: rgb(255, 255, 255);
+      color: black; 
+      order: 4; 
+      animation-delay: 1.0s;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .side-boxes {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px 0;
+      padding: 0 30px;
+    }
+    .side-boxes .box {
+      width: 40%;
+      height: 50%;
+      border: 2px solid black;
+      background-color: white;
+      text-align: center;
+      line-height: 50%;
+      font-size: 1.2rem;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    .intro {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: #4f5a68;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .intro2 {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: #4f5a68;
+            line-height: 1.6;
+            max-width: 250%;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .intro3{
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: #4f5a68;
+            line-height: 1.6;
+            max-width: 250%;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .service-card {
+            background-color: #ffffff;
+            width: 120%;
+            height: 190%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        .service-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .service-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #6b7c93;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image {
+            width: 130%;
+            height: 130%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, zoomIn 3s forwards;
+        }
+        .image:nth-child(1) {
+            background-image: url('qwe.png');
+            animation-delay: 2s;
+        }
+        .image:nth-child(2) {
+            background-image: url('https://via.placeholder.com/200/4682b4');
+            animation-delay: 2.5s;
+        }
+        .image:nth-child(3) {
+            background-image: url('https://via.placeholder.com/200/32cd32');
+            animation-delay: 3s;
+        }
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.5);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInImages {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .text-container {
+            margin-top: 50px;
+        }
+        .text-box {
+            font-size:1.2rem;;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            display: inline-block;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 95%;
+        }  
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .slide-in-left {
+            animation: slideInFromLeft 2s ease-out;
+        }
+        .services2 {
+            
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .service-card100 {
+            
+            background-color: #797979;
+            width: 14%;
+            height: 30%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 2s forwards;
+        }
+        .service-card200 {
+            background-color: #00ccff;
+            width: 14%;
+            height: 30%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 6s forwards;
+        }
+        .service-card300{
+            background-color: #00c3ff;
+            width: 14%;
+            height: 30%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 10s forwards;
+        }
+        .service-card400 {
+            background-color: #ffffff;
+            width: 14%;
+            height: 30%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 14s forwards;
+        }
+        .service-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        .service-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .service-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #6b7c93;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image {
+            width: 50%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, zoomIn 3s forwards;
+        }
+        .slide-in-right {
+            animation: slideInFromRight 2s ease-out;
+        }
+        @keyframes slideInFromRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .slide-in-top {
+            animation: slideInFromTop 2s ease-out;
+        }
+        @keyframes slideInFromTop {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .services3 {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .service-card3 {
+            background-color: #ffffff;
+            width: 60%;
+            height: 40%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        .service-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .service-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        .service-card:nth-child(4) {
+            animation-delay: 2.0s;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #6b7c93;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image {
+            width: 50%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, zoomIn 3s forwards;
+        }
+        .services4 {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .service-card {
+            background-color: #ffffff;
+            width:160%;
+            height:140%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 2.5s forwards;
+            
+        }
+        
+        
+        .service-card:nth-child(1) {
+            animation-delay: 2.5s;
+        }
+        .service-card:nth-child(2) {
+            animation-delay: 3.0s;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #6b7c93;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }      
+        .image {
+            width: 50%;
+            height:50%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, zoomIn 3s forwards;
+        }
+        .slide-in-bottom4 {
+            animation: slideInFromBottom 2s ease-out;
+        }
+        @keyframes slideInFromBottom {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .slide-in-bottom8 {
+            animation: slideInFromBottom 2s ease-out;
+        }
+        @keyframes slideInFromBottom {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .slide-in-top23 {
+            animation: slideInFromTop 2s ease-out;
+        }
+        @keyframes slideInFromTop {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .slide-in-top33 {
+            animation: slideInFromTop 2s ease-out;
+        }
+        @keyframes slideInFromTop {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .slide-in-top24 {
+            animation: slideInFromTop 2s ease-out;
+        }
+        @keyframes slideInFromTop {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .services56 {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .service-card78 {
+            background-color: #ffffff;
+            width: 30%;
+            height: 120%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card79 {
+            background-color: #00c3ff;
+            width: 30%;
+            height: 120%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card80 {
+            background-color: #ff7b00;
+            width: 30%;
+            height: 120%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card81 {
+            background-color: #ffffff;
+            width: 30%;
+            height: 120%;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            animation: slideInImages 3s forwards;
+        }
+        .service-card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        .service-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .service-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #6b7c93;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image {
+            width:50%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, zoomIn 3s forwards;
+        }
+        input {
+    width: 80%;
+    height: 300%;
+    border-radius: 42px;
+    border: 1px solid #00eeff;
+    outline: none;
+    position: relative;
+    transition: 3s linear;
+    background-color: #ffffff;
+    margin: 0 10px;
+    }
+    
+    
+    ::placeholder {
+    color: rgb(0, 174, 255);
+    font-family: Helvetica;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Logo</div>
+    <div class="menu">☰</div>
+  </header>
+
+      <div class="parallax-bg"><img src="C:\Users\21\Desktop\qwe.png" height="70%" width="100%"> </p> </div>
+      <div class="parallax-bg1"><form><center><b><input type="search" name="p" placeholder="About us | News | Rewiews | Articles | Future"></b></center></form></div>
+      <div class="parallax-bg2"><p>image from <U><i>Freepik</i></U></p> </div>
+      <br>
+      <br>
+      <br>  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br><br><br><br><br><br><br><br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>  <br><br><br><br><br>
+  <hr>
+  <center>
+  <h1><a href="#p1">Capabilities</a>&nbsp&nbsp&nbsp
+  <a href="#p2">About us</a>&nbsp&nbsp&nbsp
+  <a href="#p3">Read what our customers say</a>&nbsp&nbsp&nbsp
+  <a href="#p4">Feedback</a></h1></center>
+ 
+  <div class="intro">
+      <div class="text-box slide-in-top23"><center>We advise leaders on strategy,<br>marketing, organization, operations</center></div>
+</div>
+<div class="services56">
+    <div class="service-card78">
+        <h3><b>Friendly 24/7<br>customer service</b><br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis officiis officia doloremque earum molestiae cupiditate laudantium dolores illum, soluta velit sequi libero dolore incidunt maiores consequuntur dicta? Eos, voluptatibus.<BR><BR><U>MORE</U></h3>
+        <p>
+        </p>
+    </div>
+    <div class="service-card79">
+        <h3><b>No time windows,<br>book when you want</b><br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis facere sed minima corporis iste molestiae modi recusandae laboriosam magni, mollitia, itaque doloremque consequuntur quibusdam? Modi animi dolor recusandae maxime velit.<BR><BR><U>MORE</U></h3>
+        <p></p>
+    </div>
+    <div class="service-card80">
+        <h3><b>Affordable, upfront<br>pricing</b><br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed maxime, deleniti quo dolorem impedit consequatur ipsa culpa excepturi atque tempora explicabo sunt eos voluptatem voluptates repellendus. Harum expedita error sunt!<BR><BR><U>MORE</U></h3>
+        <p></p>
+    </div>
+    <div class="service-card81">
+        <h3><b>Vetted and screened<br>proffesionals</b><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, minus magnam porro odit, provident quis dolorem, hic laudantium labore vitae eligendi nemo veniam sint esse iure beatae commodi doloremque. Neque?<BR><BR><U>MORE</U></h3>
+        <p></p>
+    </div>
+</div>
+  <hr>
+  <div class="intro2">
+    <a id="p1"></a><center><p><center><b>Capabilities</b></center><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus voluptate facilis mollitia iste similique, minus dicta eveniet blanditiis. Sapiente odit et laboriosam corrupti incidunt recusandae vero deleniti provident corporis quaerat.</p></center>
+</div>
+  <div class="services">
+    <div class="service-card">
+        <h3><center><b>Brand Strategy</b></center></h3>
+        <p><ul>
+            <li>Brand equity audit identity system</li><br>
+            <li>Audience analisis identity system</li><br>
+            <li>Competetive rewiew identity system</li><br>
+            <li>Strategic direction identity system</li><br>
+            <li>Verbal identity identity system</li><br>
+            <li>Tagline exploration identity system</li><br>
+            <li>Communication style guide identity system</li>  <br>
+            <li>Verbal identity identity system</li><br>
+            <li>Tagline exploration identity system</li>  
+            </ul>
+        </p>
+    </div>
+    <div class="service-card">
+        <h3><center><b>Brand Identity</b></center></h3>
+        <p><ul>
+            <li>Visual positioning exploration</li><br>
+            <li>Visual identity system exploration</li><br>
+            <li>Icon & illustration guides exploration</li><br>
+            <li>Brand application exploration</li><br>
+            <li>Brand equity audit exploration</li><br>
+            <li>Audience analisis exploration</li><br>
+            <li>Competetive rewiew exploration</li><br>
+            <li>Tagline exploration exploration</li><br>
+            <li>Communication style guide exploration</li>    
+            </ul></p>
+    </div>
+    <div class="service-card">
+        <h3><center><b>Top Strategy</b></center></h3>
+        <p><ul>
+            <li>Verbal identity equity audit</li><br>
+            <li>Tagline exploration equity audit</li><br>
+            <li>Communication style guide equity audit</li><br>   
+            <li>Visual positioning equity audit</li><br>
+            <li>Visual identity system equity audit</li><br>
+            <li>Icon & illustration guides equity audit</li><br>
+            <li>Brand application equity audit</li> <br> 
+            <li>Tagline exploration equity audit</li><br>
+            <li>Communication style guide equity audit</li>   
+            </ul></p>
+    </div>
+</div>
+<hr>
+<div class="text-container">
+    <a id="p2"><div class="text-box slide-in-left">About us.<br><b>We providecustom</b>.<br><b>web designs</b>.<br>We work directly for our clients and put clients interests first.<br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At id nostrum, similique accusamus voluptate assumenda molestiae illum, sunt amet sequi quod ab sed eveniet nulla nihil! Repellat cum expedita quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet. Debitis error quis harum voluptatum, eaque rerum tempore sed dolor reiciendis. Deleniti dignissimos cum possimus nam dolor, quos delectus alias.</div>
+<div class="services2">
+    <div class="service-card100">
+        <h3><center><b>50%</b></center></h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam mollitia, explicabo aliquam dolorum impedit rem. Fugiat, quae cumque! Quod culpa libero tempore iure obcaecati at, ab eum soluta? Et, dicta! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam excepturi quia iure, quaerat eos obcaecati praesentium similique placeat sed deserunt molestiae illo voluptatum officiis eligendi minima itaque qui odit! Lorem ipsum dolor sit amet. 
+        </p>
+    </div>
+    <div class="service-card200">
+        <h3><center><b>17%</b></center></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod error architecto magnam ratione tempora aut, exercitationem cumque doloremque voluptatem omnis quam provident minus temporibus, distinctio voluptas eos praesentium culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ullam nihil cupiditate in repellat incidunt, impedit quasi dolor voluptates fugiat nulla pariatur cum qui assumenda quia.</p>
+    </div>
+    <div class="service-card300">
+    <h3><center><b>20%</b></center></h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, voluptatibus cupiditate optio earum molestias natus corporis sequi hic ducimus quis atque reprehenderit quisquam et ipsam consequuntur nobis nisi, accusamus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reiciendis, sequi eaque optio odit laborum ipsa nemo iure cupiditate iste culpa animi dolor officiis veritatis cumque quas dolorum enim iusto. Lorem ipsum dolor, sit amet consectetur.
+    </p>
+</div>
+<div class="service-card400">
+    <h3><center><b>13%</b></center></h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam qui tenetur modi doloribus ipsum? Corrupti nemo repudiandae quis error, nihil perspiciatis? Soluta beatae culpa quidem quas ab, velit eum autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus saepe perferendis harum officia amet ullam in autem repellendus aut praesentium aliquam sunt repudiandae ad possimus aperiam exercitationem.</p>
+</div>
+    </div>
+    <hr>
+    <div class="text-container">
+    <div class="text-box slide-in-right"><b>TRANSLATING 100 YEARS OF<br>SERVICE INTO A DIGITAL FUTURE</b><BR>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sapiente a eos ullam cumque dolorem alias totam quae praesentium fuga eum magnam hic repudiandae dignissimos? Eius dignissimos quis obcaecati. Illum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quae a numquam cupiditate maxime rerum eius fuga! Deserunt amet perspiciatis vitae odit praesentium harum reprehenderit asperiores odio? Neque, illo quibusdam.</div>
+        <div class="text-box slide-in-left"><b>BRAND , EXPIRIENCES AND<br>RADICAL COLLABORATION</b><BR>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sapiente a eos ullam cumque dolorem alias totam quae praesentium fuga eum magnam hic repudiandae dignissimos? Eius dignissimos quis obcaecati. Illum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quae a numquam cupiditate maxime rerum eius fuga! Deserunt amet perspiciatis vitae odit praesentium harum reprehenderit asperiores odio? Neque, illo quibusdam.</div>
+ <hr>
+ <div class="text-container3">
+    <a id="p3"><div class="text-box slide-in-top"><center><b>Read what our customers say</b></center></div>
+ <div class="services3">
+    <div class="service-card"> 
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam mollitia, explicabo aliquam dolorum impedit rem. Fugiat, quae cumque! Quod culpa libero tempore iure obcaecati at, ab eum soluta? Et, dicta! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti labore iste fuga voluptatum. Culpa sit, impedit quos sunt nostrum porro soluta ea ducimus harum eos saepe explicabo, cum aliquid quibusdam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae tempora, soluta quia, dolorum, est eius in tenetur accusantium eaque optio qui quos eos eum. Fuga eligendi illum deleniti at a?<br><br><br><br><br><b>John Almedo</b>
+        </p>
+    </div>
+    <div class="service-card">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod error architecto magnam ratione tempora aut, exercitationem cumque doloremque voluptatem omnis quam provident minus temporibus, distinctio voluptas. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi tempore explicabo expedita, soluta sunt ad inventore provident iure quibusdam veritatis sint corrupti neque quis voluptatum illo aut sed atque et. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum facilis assumenda repudiandae molestias saepe explicabo consequatur dicta voluptatibus reprehenderit, nemo minus neque at? Ab aliquid quaerat non molestiae, sequi distinctio?,<br><br>.<br><br><b>Frank Kinney</b></p>
+    </div>
+    <div class="service-card">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, voluptatibus cupiditate optio earum molestias natus corporis sequi hic ducimus quis atque reprehenderit quisquam et ipsam consequuntur nobis nisi, accusamus ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sapiente, magni alias maxime harum veritatis voluptas itaque accusantium ipsam autem dolores architecto qui, ullam in ut totam? Veritatis, distinctio consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima id quas ipsum maxime voluptatem, deserunt necessitatibus ea tempore sapiente facere fugit voluptatibus molestias veniam rem eius ab in corrupti mollitia?<br><br><br><b>Stella Larson</b>
+    </p>
+</div>
+<div class="service-card">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam qui tenetur modi doloribus ipsum? Corrupti nemo repudiandae quis error, nihil perspiciatis? Soluta beatae culpa quidem quas ab, velit eum autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nesciunt quasi voluptas provident recusandae rem esse eaque laborum, reiciendis minima cupiditate, placeat natus numquam fugit, nostrum voluptate aperiam architecto? Quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam dolor ratione iste qui, doloremque pariatur eius dignissimos iure temporibus laboriosam voluptatibus nam sed nihil. Facilis, animi! Facilis, iste maxime.<br><br><br><br><b>Paul Smith</b></p>
+</div>
+    </div>
+    <hr>
+    <div class="intro3">
+        <a id="p4"><div class="text-box slide-in-top33"><center>Feedback</center></div>
+  </div>
+    <div class="services4">
+        <div class="service-card">
+            <h3><b>Get in touch</b></h3>
+            <p>Use out contact from for all information requests or contact us directly using the contact information below.<br><br>Feel free to get in touch with us via email or phone<hr><br><br><b>Our office Location</b><br><br>The interior Design Studio Company<br><br>The courtyard AI Quoz 1 Colorado USA<BR><br><br><br><B>Phone (Landline)<br><br>+912 3567 8987</B> </p>
+        </div>
+        <div class="service-card">
+            <h3><b>GET STARTED WITH A FREE QUOT</b><br><br>Name:<br><hr>Email:<br><hr>Message:<br><hr>
+            <p></p>
+        </div>
+        </div>
+  <footer>
+   Sample text.Click to select the Text Elements.
+  </footer>
+</body>
+</html>
